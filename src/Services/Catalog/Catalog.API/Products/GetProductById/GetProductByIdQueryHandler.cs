@@ -12,7 +12,7 @@ namespace Catalog.API.Products.GetProductById
 
             if (product is null)
             {
-                throw new ProductNotfoundException("Product not found");
+                throw new ProductNotfoundException(query.Id);
             }
             return new GetProductByIdResult(product);
 

@@ -13,7 +13,7 @@ namespace Catalog.API.Products.GetProductByCategory
                 .Where(p => p.Category.Contains(query.Category)).ToListAsync();
             if (!products.Any())
             {
-                throw new ProductNotfoundException("Product not found");
+                throw new ProductNotfoundException();
             }
             return new GetProductByCategoryResult(products);
         }
